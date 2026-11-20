@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Text Customizer</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; text-align: center; }
+        #customText { font-size: 24px; margin-top: 20px; display: inline-block; }
+        .controls { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+    <div class="controls">
+        <input type="text" id="userInput" placeholder="Type something here...">
+        
+        <select id="fontSelect">
+            <option value="sans-serif">Sans-Serif</option>
+            <option value="serif">Serif</option>
+            <option value="monospace">Monospace</option>
+            <option value="cursive">Cursive</option>
+        </select>
+
+        <input type="color" id="colorPicker" value="#000000">
+    </div>
+
+    <div id="customText">Your text will appear here</div>
+
+    <script>
+        const input = document.getElementById('userInput');
+        const textDisplay = document.getElementById('customText');
+        const fontSelect = document.getElementById('fontSelect');
+        const colorPicker = document.getElementById('colorPicker');
+
+        input.addEventListener('input', () => {
+            textDisplay.textContent = input.value || 'Your text will appear here';
+        });
+
+        fontSelect.addEventListener('change', () => {
+            textDisplay.style.fontFamily = fontSelect.value;
+        });
+
+        colorPicker.addEventListener('input', () => {
+            textDisplay.style.color = colorPicker.value;
+        });
+    </script>
+</body>
+</html>
