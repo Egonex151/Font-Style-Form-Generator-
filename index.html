@@ -8,11 +8,12 @@
         body { font-family: sans-serif; padding: 20px; text-align: center; }
         #customText { font-size: 24px; margin-top: 20px; display: inline-block; }
         .controls { margin-bottom: 20px; }
+        .container { position: relative; display: inline-block; } #customText { position: absolute; top: 20px; left: 20px; color: white; }
     </style>
 </head>
 <body>
-    <img src="20261120_102519.jpg" alt="Description">
-
+    <div class="container"> <img src="20261120_102519.jpg" alt="Description" style="width: 100%; max-width: 500px; display: block;">
+        
     <div class="controls">
         <input type="text" id="userInput" placeholder="Type something here...">
         
@@ -27,6 +28,7 @@
     </div>
 
     <div id="customText">Your text will appear here</div>
+        <div></div>
 
     <script>
         const input = document.getElementById('userInput');
